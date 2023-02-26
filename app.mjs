@@ -1,16 +1,28 @@
-import express from "express"; //importing express for server and built in json parser;
-// we don't need to write the file path in this case because we are taking it from node_modules
+/* Import express for its server and built-in json parser.
+
+   Note: File path to express is not necessary here, because the module was 
+   installed into the node_modules folder.
+*/
+import express from "express";
+
+/* Import routes for direction of traffic by url paths. */
 import indexRouter from "./routes/index.mjs";
 import sessionRouter from "./routes/session.mjs";
 import startRouter from "./routes/start.mjs";
 
-const PORT = 3000; //port on which server shall listen
-const app = express(); // this is the express server application
+/**Port on which the server will listen. */
+const PORT = 3000;
 
+/**The express server application. */
+const app = express();
+
+/* Middleware to pre-parse Content-Type:json; appends key-values to body. */
 app.use(express.json());
 
+/* Activate the various routes as middleware to divert traffic into modules. */
 app.use("/", indexRouter);
-app.use("/start", startRouter);
 app.use("/session", sessionRouter);
+app.use("/start", startRouter);
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+/* Start the server listening on the specified port. */
+app.listen(PORT, () => console.log(`Listening on port ${PORT}.`));
