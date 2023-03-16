@@ -21,6 +21,8 @@ async function register() {
  * Handles click on the start button.
  ******************************************************************************/
 function handleStart() {
+  document.getElementById("start-overlay").style.display = "none";
+
   /* Convert the minimum and maximum year values to numbers. */
   const minYear = Number(document.getElementById("min-year").value);
   const maxYear = Number(document.getElementById("max-year").value);

@@ -1,0 +1,13 @@
+Settings:
+1. the user can choose which states they do/don't want to see (dropdown checkboxes)
+2. the user can choose the time frame that they want to see 1932-1964 (2 number inputs)
+3. the user can choose the margin of victory that they will see 
+4. the user can choose the margin of error of dates that the system is willing to accept (input = number)
+5. the user can choose the margin of error of years  that the system is willing to accept (input = number)
+
+Menu Tools:
+1. dropdown to let user guess the winning party
+2. input box to let user guess the date
+3. input box to let user guess the margin of victory
+4. zoom feature
+Submit button
