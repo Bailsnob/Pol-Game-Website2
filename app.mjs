@@ -9,6 +9,7 @@ import express from "express";
 import indexRouter from "./routes/index.mjs";
 import sessionRouter from "./routes/session.mjs";
 import startRouter from "./routes/start.mjs";
+import guessRouter from "./routes/guess.mjs";
 
 /**Port on which the server will listen. */
 const PORT = 3000;
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use("/", indexRouter);
 app.use("/session", sessionRouter);
 app.use("/start", startRouter);
+app.use("/guess", guessRouter);
 
 /* Start the server listening on the specified port. */
 app.listen(PORT, () => console.log(`Listening on port ${PORT}.`));

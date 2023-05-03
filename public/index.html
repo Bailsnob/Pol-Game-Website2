@@ -11,11 +11,36 @@
   <body>
     <!-- The entire page. -->
     <div class="grid-container">
-
       <!-- Blue side menu at left of page. -->
       <div class="menu">
         <!-- Start button to launch the game. -->
         <input class="menu-button" type="button" />
+        <!--why is this here again?-->
+        <select name="party" id="winner-guess" class="menu-button">
+          <option value="democrat">D</option>
+          <option value="republican">R</option>
+          <option value="other">I</option>
+        </select>
+        <input
+          type="number"
+          id="date-guess"
+          class="menu-button"
+          min="1900"
+          max="2022"
+          value="2022"
+        />
+        <input
+          type="number"
+          id="margin-guess"
+          class="menu-button"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <button type="button" id="zoom-button" class="menu-button">Zoom</button>
+        <button type="button" id="guess-button" class="menu-button">
+          Submit
+        </button>
       </div>
 
       <!-- Main display area. -->
@@ -29,49 +54,52 @@
       <div id="start-box">
         <div class="start-box-label">States</div>
         <div class="start-box-input">
-          <select name="min-year" id="min-year-delete">
-            <option value="1980" selected="selected">1980</option>
-            <option value="1984">1984</option>
-            <option value="1988">1988</option>
-            <option value="1992">1992</option>
-            <option value="1996">1996</option>
-            <option value="2000">2000</option>
-            <option value="2004">2004</option>
-            <option value="2008">2008</option>
-            <option value="2012">2012</option>
-            <option value="2016">2016</option>
-            <option value="2020">2020</option>
-          </select>
+          <select name="states" id="states-start" multiple></select>
         </div>
 
         <div class="start-box-label">Interval</div>
         <div class="start-box-input">
-          <input type="number" id="min-year-replaced" min="1900" max="2022" value="1900">
-          <input type="number" id="max-year-replaced" min="1900" max="2022" value="2022">
+          <input
+            type="number"
+            id="min-year-replaced"
+            min="1900"
+            max="2022"
+            value="1900"
+          />
+          <input
+            type="number"
+            id="max-year-replaced"
+            min="1900"
+            max="2022"
+            value="2022"
+          />
         </div>
 
         <div class="start-box-label">Closeness</div>
         <div class="start-box-input">
-          <input type="number" id="max-margin" min="0" max="100" value="0">
+          <input type="number" id="max-margin" min="0" max="100" value="0" />
         </div>
 
         <div class="start-box-label">Date Margin of Error</div>
         <div class="start-box-input">
-          <input type="number" id="date-padding" min="0" max="61" value="0">
+          <input type="number" id="date-padding" min="0" max="61" value="0" />
         </div>
 
         <!-- TODO: find a good label for this -->
-        <div class="start-box-label">Margin Margin of Error</div> 
+        <div class="start-box-label">Margin Margin of Error</div>
         <div class="start-box-input">
-          <input type="number" id="margin-padding" min="0" max="100" value="0">
+          <input
+            type="number"
+            id="margin-padding"
+            min="0"
+            max="100"
+            value="0"
+          />
         </div>
 
         <div class="start-box-label"></div>
         <div class="start-box-input" id="start-button-box">
-          <input
-          id="start-button"
-          type="button"
-        />
+          <input id="start-button" type="button" />
         </div>
         <!-- <input
           id="start-button"

@@ -1,6 +1,6 @@
-const years = [1980, 1984, 1988, 1992];
+const years = [2000, 2004, 2008];
 
 export default function getRandomYear(minYear, maxYear) {
-  //TO DO
-  return 1980;
+  //TODO
+  return years[Math.floor(years.length * Math.random())];
 }

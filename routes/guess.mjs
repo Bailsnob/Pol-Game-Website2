@@ -16,21 +16,18 @@ router.post("/", (req, res) => {
     return;
   }
 
-  /* Ensure that the game hasn't already started. */
-  if (session.game.isStarted) {
-    // TODO: How to handle attempted restart of game? -- need to respond to req
-    return;
-  }
+  /* TODO: think of illegal behavior to screen for */
+  // if (session.game.isStarted) {
+  //   // TODO: How to handle attempted restart of game? -- need to respond to req
+  //   return;
+  // }
 
   /* Start session's game with the provided arguments & send data to client. */
   session.game
-    .start(
-      req.body.minYearDelete,
-      req.body.minYearReplaced,
-      req.body.maxYearReplaced,
-      req.body.maxMargin,
-      req.body.datePadding,
-      req.body.marginPadding,)
+    .guess(
+      req.body.winnerGuess,
+      req.body.dateGuess,
+      req.body.marginGuess,)
     .then(({ type, data }) => {
       res.contentType(type);
       res.send(data);

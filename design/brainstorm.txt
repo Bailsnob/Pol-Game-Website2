@@ -10,4 +10,4 @@ Menu Tools:
 2. input box to let user guess the date
 3. input box to let user guess the margin of victory
 4. zoom feature
-Submit button
+5. Submit button
